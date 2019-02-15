@@ -19,9 +19,16 @@ def 出版社列表(requset):
     #     data.append(model_to_dict(i))
 
     # 方法3
-    from django.core import serializers
-    data=serializers.serialize("json",结果)
+    # from django.core import serializers
+    # data=serializers.serialize("json",结果)
+
 
     import json
     # return HttpResponse(json.dumps(data),content_type='application/json')
-    return HttpResponse(data,content_type='application/json')
+    # 方法3
+    # return HttpResponse(data,content_type='application/json')
+
+    from APP01 import  序列化
+    import json
+    s= 序列化.出版社序列化(结果,many=True)
+    return HttpResponse(json.dumps(s.data),content_type='application/json')
