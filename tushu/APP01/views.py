@@ -23,4 +23,5 @@ def 出版社列表(requset):
     data=serializers.serialize("json",结果)
 
     import json
-    return HttpResponse(json.dumps(data),content_type='application/json')
+    # return HttpResponse(json.dumps(data),content_type='application/json')
+    return HttpResponse(data,content_type='application/json')
